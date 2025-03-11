@@ -8,6 +8,12 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <App />
+    <meta name="description" content='text'></meta>
+    <meta name="og:title" content=''/>
+    <meta name="og:description" content=''/>
+    <meta name="og:image" content=''/>
+    <meta name="viewport" content='width=device-width, initial-scale=1'></meta>
+    <link rel="stylesheet" href="styles.css"></link>
   </React.StrictMode>
 );
 
