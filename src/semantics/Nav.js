@@ -6,9 +6,11 @@ function Nav() {
         <img alt="Little Lemon Logo"></img>
         <ul>
             <li><a>Home</a></li>
-            <li><a>Services</a></li>
             <li><a>About</a></li>
-            <li><a>Contact</a></li>
+            <li><a>Menu</a></li>
+            <li><a>Reservations</a></li>
+            <li><a>Order Online</a></li>
+            <li><a>Login</a></li>
         </ul>
     </nav>
   )
