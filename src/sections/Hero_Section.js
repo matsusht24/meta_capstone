@@ -14,6 +14,7 @@ function Hero_Section() {
       </div>
       <div className="hero-image">
         <img
+          src="/images/restauranfood.jpg"
           alt="A plate of food"
         />
       </div>

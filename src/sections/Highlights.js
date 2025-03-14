@@ -2,6 +2,7 @@ import React from "react";
 import Menu_Card from "../component/Menu_Card";
 
 
+
 function Highlights() {
   return (
     <section className="highlights" id="highlights">
@@ -14,20 +15,20 @@ function Highlights() {
       name: "Greek Salad",
       price: 12.99,
       desc: "The famous greek salad of crispy lettuce, peppers, olives, and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons.",
-      img: "",
+      img: "/images/greek salad.jpg",
     }} />
         <Menu_Card item={{
       name: "Bruchetta",
       price: 5.99,
       desc: "Our Burshetta is made from grilled bread that has been smeared with garlic and seasoned with salt and oluve oil.",
-      img: "",
+      img: "images/bruchetta.svg",
     }} />
         <Menu_Card
           item={{
             name: "Lemon Dessert",
             price: 5.00,
             desc: "This comes straight from grandma's recipe book, every last ingredient has been sourced and is as authentic as can be imagined.",
-            img: "",
+            img: "images/lemon dessert.jpg",
           }}
         />
       </div>
