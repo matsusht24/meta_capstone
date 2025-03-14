@@ -1,39 +1,112 @@
-.App {
-  text-align: center;
+html {
+    margin: 0 15vw;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Header Section */
+
+nav {
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    color: black;
+    font-weight: bold;
+    background: #f0f0f0;
+    gap: 5rem;
+}
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 1rem;
+    list-style: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    margin: 0;
+    color: #F4CE14;
 }
 
-.App-link {
-  color: #61dafb;
+h1 ~ h4 {
+    max-width: 100%; /* Set the maximum width to match h1 */
+    word-wrap: break-word; /* Ensure text wraps within the max-width */
+    overflow-wrap: break-word; /* Ensure text wraps within the max-width */
+    
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h3 {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin: 0;
+}
+
+.hero-text h3,h4 {
+    color: #FFFFFF;
+}
+
+/* Hero Image */
+.hero-image {
+    max-width: 50%;
+    height: auto;
+}
+
+/* Highlights Section */
+.highlights {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 0;
+}
+
+.highlights-text {
+    display : flex;
+    justify-content: space-between;
+    flex-direction: row;
+
+}
+.highlights h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* Highlight Items */
+
+.highlights-menu {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 1rem;
+    list-style: none;
+}
+
+.highlights h4 {
+    color: #EE9972
+}
+
+
+/* Buttons */
+
+button {
+    background: #F4CE14;
+    color: black;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+button:hover {
+    background: #e3b800;
 }
 

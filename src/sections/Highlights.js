@@ -1,14 +1,15 @@
 import React from "react";
 import Menu_Card from "../component/Menu_Card";
 
+
 function Highlights() {
   return (
-    <section>
-      <div>
+    <section className="highlights" id="highlights">
+      <div className="highlights-text">
         <h2>This weeks specials!</h2>
         <button>Online Menu</button>
       </div>
-      <div>
+      <div className="highlights-menu">
         <Menu_Card item={{
       name: "Greek Salad",
       price: 12.99,
@@ -24,7 +25,7 @@ function Highlights() {
         <Menu_Card
           item={{
             name: "Lemon Dessert",
-            price: 5.0,
+            price: 5.00,
             desc: "This comes straight from grandma's recipe book, every last ingredient has been sourced and is as authentic as can be imagined.",
             img: "",
           }}

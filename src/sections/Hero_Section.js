@@ -2,7 +2,7 @@ import React from "react";
 
 function Hero_Section() {
   return (
-    <section>
+    <section className="hero" id="home">
       <div className="hero-text">
         <h1>Little Lemon</h1>
         <h3>Chicago</h3>
@@ -12,9 +12,12 @@ function Hero_Section() {
         </h4>
         <button>Reserve a Table</button>
       </div>
-      <>
-        <img alt="Salmon sliders"></img>
-      </>
+      <div className="hero-image">
+        <img
+          alt="A plate of food"
+        />
+      </div>
+      
     </section>
   );
 }

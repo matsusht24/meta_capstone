@@ -9,7 +9,7 @@ return (
       <div>
         <div>
           <h3>{name}</h3>
-          <h4>{price}</h4>
+          <h4>{"$" + price}</h4>
         </div>
 
         <p>{desc}</p>
