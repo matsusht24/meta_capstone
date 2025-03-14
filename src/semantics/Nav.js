@@ -3,7 +3,7 @@ import React from 'react'
 function Nav() {
   return (
     <nav>
-        <img alt="Little Lemon Logo"></img>
+        <img alt="Little Lemon Logo" src="/images/Logo .svg"></img>
         <ul>
             <li><a>Home</a></li>
             <li><a>About</a></li>
