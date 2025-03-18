@@ -1,12 +1,12 @@
 import React from 'react'
 import BookingForm from '../component/BookingForm'
 
-function BookingPage() {
+function BookingPage(props) {
   return (
     <>
-      <BookingForm  />
+      <BookingForm  {...props} />
     </>
   )
 }
 
-export default BookingPage
+export default BookingPage;
