@@ -7,29 +7,23 @@ import BookingPage from "./pages/BookingPage";
 import { useReducer } from "react";
 
 function App() {
-  const updateAvailableTimes = (selectedTime) => {
-    // This function removes the selected time from the available times
-    const newTimes = availableTimes.filter((time) => time !== selectedTime);
-    return newTimes;
+  const updateAvailableTimes = (state, action) => {
+    // This takes the updated date and returns the new available times
+    // based on the selected date
+    switch(action.type) {
+      case "CHANGE_DATE":
+        return initializeTimes(); // Reset to default times for simplicity
+      default:
+        return state;
+    }
+
   };
-  const initializeAvailableTimes = () => {
-    // This function resets the available times to the original list
-    const intialTimes = [
-      "09:00",
-      "10:00",
-      "11:00",
-      "12:00",
-      "13:00",
-      "14:00",
-      "15:00",
-      "16:00",
-    ];
-   dispatch({ type: "SET_TIMES", payload: intialTimes });
-    return intialTimes;
+  const initializeTimes = () => {
+    return ["17:00", "18:00", "19:00", "20:00", "21:00"];
   };
-  const [availableTimes, dispatch] = useReducer(
-    initializeAvailableTimes,
-    updateAvailableTimes
+  
+  const [state, dispatch] = useReducer(
+    updateAvailableTimes, initializeTimes()
   );
   
   return (
@@ -42,7 +36,7 @@ function App() {
             path="/booking"
             element={
               <BookingPage
-                availableTimes={availableTimes}
+                availableTimes={state}
                 setAvailableTimes={dispatch}
               />
             }

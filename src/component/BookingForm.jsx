@@ -10,10 +10,19 @@ function BookingForm({availableTimes, setAvailableTimes}) {
   const [guests, setGuests] = React.useState(1);
   const [occasion, setOccasion] = React.useState("Birthday");
   // connect each state variable with their corresponding input field
-  const handleDateChange = (e) => setDate(e.target.value);
+  const handleDateChange = (e) => {
+
+    // Update available times based on the selected date
+    const selectedDate = e.target.value;
+    setDate(selectedDate);
+    setAvailableTimes({type: "CHANGE_DATE", date: selectedDate}); // Dispatch action to update available times
+
+    
+  };
   const handleTimeChange = (e) => setTime(e.target.value);
   const handleGuestsChange = (e) => setGuests(e.target.value);
   const handleOccasionChange = (e) => setOccasion(e.target.value);
+
   return (
     <form className="reservation-form">
       <label for="res-date">Choose date</label>
