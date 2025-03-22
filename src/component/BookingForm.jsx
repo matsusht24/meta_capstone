@@ -28,7 +28,7 @@ function BookingForm({availableTimes, setAvailableTimes}) {
       <label for="res-date">Choose date</label>
       <input type="date" id="res-date" onChange={(e) => handleDateChange(e)} />
       <label for="res-time">Choose time</label>
-      <select id="res-time " onChange={(e) => handleTimeChange(e)}>
+      <select id="res-time" onChange={(e) => handleTimeChange(e)}>
         {availableTimes.map((time, index) => (
           <option key={index} value={time} className="time-option">
             {time}

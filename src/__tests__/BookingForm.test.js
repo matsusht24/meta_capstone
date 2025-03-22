@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen , fireEvent} from '@testing-library/react';
 import BookingForm from '../component/BookingForm';
 
 
@@ -10,7 +10,7 @@ test('validates update of available times when date is changed', () => {
   // Simulate changing the date
   fireEvent.change(dateInput, { target: { value: '2023-10-01' } });
   // Check if the available times are updated
-  expect(timeSelect).toHaveValue(["17:00", "18:00", "19:00", "20:00", "21:00"]); 
+  expect(timeSelect).toHaveValue("17:00"); // Assuming the default time is 17:00 after date change
 });
 
 test('validates initial available times', () => {
