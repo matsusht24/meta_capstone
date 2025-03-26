@@ -12,22 +12,29 @@ function App() {
     // based on the selected date
     switch(action.type) {
       case "CHANGE_DATE":
-        return initializeTimes(); // Reset to default times for simplicity
+        return initializeTimes // Reset to default times for simplicity
       default:
         return state;
     }
 
   };
   const initializeTimes = () => {
-    const currentDate = new Date().toISOString().split("T")[0]; 
-    fetchAPI(currentDate);
+    const currentDate = new Date().toISOString().split("T")[0];
+    //return window.fetchAPI(currentDate);
+    return [
+      "17:00",
+      "18:00",
+      "19:00",
+      "20:00",
+      "21:00",
+    ];
 
   };
-  
+
   const [state, dispatch] = useReducer(
     updateAvailableTimes, initializeTimes()
   );
-  
+
   return (
     <Router>
       <Header />
