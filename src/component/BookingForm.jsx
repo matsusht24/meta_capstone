@@ -40,17 +40,17 @@ function BookingForm({availableTimes, setAvailableTimes, submitForm}) {
 
   return (
     <form className="reservation-form" onSubmit={handleSubmit}>
-      <label for="res-date">Choose date</label>
-      <input type="date" id="res-date" onChange={(e) => handleDateChange(e)} />
-      <label for="res-time">Choose time</label>
-      <select id="res-time" onChange={(e) => handleTimeChange(e)}>
+      <label htmlFor="res-date">Choose date</label>
+      <input type="date" id="res-date" onChange={(e) => handleDateChange(e)} required min={new Date().toISOString().split("T")[0]} />
+      <label htmlFor="res-time">Choose time</label>
+      <select id="res-time" onChange={(e) => handleTimeChange(e)} required >
         {availableTimes.map((time, index) => (
           <option key={index} value={time} className="time-option">
             {time}
           </option>
         ))}
       </select>
-      <label for="guests">Number of guests</label>
+      <label htmlFor="guests">Number of guests</label>
       <input
         type="number"
         placeholder="1"
@@ -58,11 +58,17 @@ function BookingForm({availableTimes, setAvailableTimes, submitForm}) {
         max="10"
         id="guests"
         onChange={(e) => handleGuestsChange(e)}
+        required
+        value={guests}
       />
-      <label for="occasion">Occasion</label>
-      <select id="occasion" onChange={(e) => handleOccasionChange(e)}>
+      <label htmlFor="occasion">Occasion</label>
+      <select id="occasion" onChange={(e) => handleOccasionChange(e)} required>
+        <option value="" disabled selected>
+          -- Select an occasion --
+        </option>
         <option>Birthday</option>
         <option>Anniversary</option>
+        <option>None</option>
       </select>
       
       <input type="submit" value="Make Your reservation"/>
