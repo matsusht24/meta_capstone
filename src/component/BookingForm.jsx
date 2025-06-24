@@ -39,11 +39,15 @@ function BookingForm({availableTimes, setAvailableTimes, submitForm}) {
   };
 
   return (
-    <form className="reservation-form" onSubmit={handleSubmit}>
+    <form className="reservation-form" onSubmit={handleSubmit} aria-labelledby="reservation-form-title"
+      aria-describedby="reservation-form-desc">
+      <h2 id="reservation-form-title">Make a Reservation</h2>
+      <p id="reservation-form-desc">Please fill out the form below to make a reservation
+        at our restaurant.</p>
       <label htmlFor="res-date">Choose date</label>
-      <input type="date" id="res-date" onChange={(e) => handleDateChange(e)} required min={new Date().toISOString().split("T")[0]} />
+      <input type="date" id="res-date" onChange={(e) => handleDateChange(e)} required min={new Date().toISOString().split("T")[0]} aria-required="true" aria-label="Reservation date"/>
       <label htmlFor="res-time">Choose time</label>
-      <select id="res-time" onChange={(e) => handleTimeChange(e)} required >
+      <select id="res-time" onChange={(e) => handleTimeChange(e)} required aria-required="true" aria-label="Reservation time">
         <option value="" disabled>-- Select a time --</option>
         {/* Map through available times and create an option for each */}
         {availableTimes.map((time, index) => (
@@ -59,18 +63,20 @@ function BookingForm({availableTimes, setAvailableTimes, submitForm}) {
         min="1"
         max="10"
         id="guests"
+        aria-required="true"
+        aria-label="Number of guests"
         onChange={(e) => handleGuestsChange(e)}
         required
         value={guests}
       />
       <label htmlFor="occasion">Occasion</label>
-      <select id="occasion" onChange={(e) => handleOccasionChange(e)} required defaultValue={"-- Select an occasion --"}>
+      <select id="occasion" onChange={(e) => handleOccasionChange(e)} required defaultValue={"-- Select an occasion --"} aria-required="true" aria-label="Reservation occasion">
         <option>Birthday</option>
         <option>Anniversary</option>
         <option>None</option>
       </select>
       
-      <input type="submit" value="Make Your reservation"/>
+      <input type="submit" value="Make Your reservation" aria-label="Submit reservation"/>
     </form>
   );
 }
