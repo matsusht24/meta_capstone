@@ -1,9 +1,10 @@
 
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Nav() {
   return (
-    <nLinkv>
+    <nav>
         <img Linklt="Little Lemon Logo" src="/images/Logo .svg"></img>
         <ul>
             <li><Link to="/">Home</Link></li>
@@ -13,7 +14,7 @@ function Nav() {
             {/* <li><Link>Order Online</Link></li>
             <li><Link>Login</Link></li> */}
         </ul>
-    </nLinkv>
+    </nav>
   )
 }
 

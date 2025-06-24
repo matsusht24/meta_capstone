@@ -6,8 +6,7 @@ function BookingForm({availableTimes, setAvailableTimes, submitForm}) {
   // The form fields are stored within useState variables
   // and can be submitted to handle the reservation process.
   // The form includes a submit button to finalize the reservation.
-  const [date, setDate] = React.useState("");
-  const [time, setTime] = React.useState("17:00");
+  const [date, setDate] = React.useState(new Date().toISOString().split("T")[0]);  const [time, setTime] = React.useState("17:00");
   const [guests, setGuests] = React.useState(1);
   const [occasion, setOccasion] = React.useState("Birthday");
   // connect each state variable with their corresponding input field
@@ -25,7 +24,8 @@ function BookingForm({availableTimes, setAvailableTimes, submitForm}) {
   const handleOccasionChange = (e) => setOccasion(e.target.value);
   const handleSubmit = (e) => {
     e.preventDefault(); // Prevent the default form submission behavior
-
+    // Validate form data before submission
+    if (!e.target.checkValidity()) return;
     // Gather all form data into an object
     const formData = {
       date,
@@ -44,6 +44,8 @@ function BookingForm({availableTimes, setAvailableTimes, submitForm}) {
       <input type="date" id="res-date" onChange={(e) => handleDateChange(e)} required min={new Date().toISOString().split("T")[0]} />
       <label htmlFor="res-time">Choose time</label>
       <select id="res-time" onChange={(e) => handleTimeChange(e)} required >
+        <option value="" disabled>-- Select a time --</option>
+        {/* Map through available times and create an option for each */}
         {availableTimes.map((time, index) => (
           <option key={index} value={time} className="time-option">
             {time}
@@ -62,10 +64,7 @@ function BookingForm({availableTimes, setAvailableTimes, submitForm}) {
         value={guests}
       />
       <label htmlFor="occasion">Occasion</label>
-      <select id="occasion" onChange={(e) => handleOccasionChange(e)} required>
-        <option value="" disabled selected>
-          -- Select an occasion --
-        </option>
+      <select id="occasion" onChange={(e) => handleOccasionChange(e)} required defaultValue={"-- Select an occasion --"}>
         <option>Birthday</option>
         <option>Anniversary</option>
         <option>None</option>
