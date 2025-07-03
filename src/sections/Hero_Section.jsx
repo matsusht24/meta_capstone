@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 function Hero_Section() {
   return (
     <section className="hero" id="home">
@@ -10,7 +10,7 @@ function Hero_Section() {
           We are a family owned Mediteranean restaurant focused on traditional
           recipes served with a modern twist.{" "}
         </h4>
-        <button>Reserve a Table</button>
+        <Link className="hero-button" to="/booking">Reserve a Table</Link>
       </div>
       <div className="hero-image">
         <img

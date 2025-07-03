@@ -12,7 +12,7 @@ function ConfirmedBooking() {
             <li>Guests: 4</li>
             <li>Occasion: Birthday</li>
         </ul>   
-    <Link to="/">Home</Link>
+    <Link to="/" className="hero-button">Home</Link>
     </div>
   )
 }
